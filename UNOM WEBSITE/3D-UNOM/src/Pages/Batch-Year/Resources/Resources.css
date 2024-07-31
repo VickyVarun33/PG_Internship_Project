@@ -1,0 +1,84 @@
+/* src/pages/Resources.css */
+.gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  background-image: url('../../../assets/nature.jpg'); /*Use the nature image as background */
+  background-size: cover;
+  background-position: center;
+  background-color: #f9f9f9; /* Fallback color */
+  padding: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+.gallery-container h1 {
+  margin-bottom: 20px;
+  color: white; /* Updated color */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Add shadow to make text stand out */
+}
+
+.diamond-box {
+  text-align: center;
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ff6347; /* Updated border color */
+  transform: rotate(45deg);
+  margin: 20px;
+  background-color: #ff6347; /* Updated background color */
+  color: white; /* Text color remains white */
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.diamond-box:hover {
+  transform: scale(1.1);
+  background-color: #e55335; /* Updated hover background color */
+}
+
+.diamond-box::after {
+  content: "";
+  padding-bottom: 100%; /* Maintain square aspect ratio */
+}
+
+.about-box {
+  width: 100px;
+  height: 100px;
+}
+
+/* Overlay effect for background image */
+.gallery-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay color */
+  z-index: -1; /* Place overlay behind content */
+}
+
+/* Overlay effect for diamond boxes */
+.diamond-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Overlay color */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.diamond-box:hover::before {
+  opacity: 1;
+}

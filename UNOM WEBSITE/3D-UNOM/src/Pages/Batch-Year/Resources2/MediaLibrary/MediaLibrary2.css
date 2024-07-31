@@ -1,0 +1,156 @@
+/* src/Resources2/MediaLibrary/MediaLibrary2.css */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Gradient background for the entire page */
+.media-library {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    background: linear-gradient(to right, #ffecd2, #fcb69f); /* Gradient background */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Title styling with glow and transition */
+.media-library h2 {
+    font-size: 2.5rem;
+    color: #fff;
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8), 0 0 15px rgba(255, 255, 255, 0.6);
+    margin-bottom: 20px;
+    transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.media-library h2:hover {
+    color: #ffeb3b;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 25px rgba(255, 255, 255, 0.8);
+    transform: scale(1.1);
+}
+
+/* Grid container for videos with glassmorphic effect */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1); /* Slightly opaque white background */
+    backdrop-filter: blur(10px); /* Glassmorphism effect */
+    border-radius: 10px; /* Rounded corners */
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    max-height: 80vh; /* Adjust as needed to fit the viewport */
+    position: relative;
+}
+
+/* Styling for individual video cards */
+.video-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer; /* Indicate clickable */
+}
+
+.video-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s; /* Smooth scaling effect */
+}
+
+.video-card p {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    margin: 0;
+}
+
+/* Hover effects for video cards */
+.video-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Modal styling for video viewer */
+.video-modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+/* Container for modal content with scroll functionality */
+.video-modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: rgba(255, 255, 255, 0.9); /* Light background with transparency */
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: auto; /* Allow scrolling if content is too large */
+}
+
+/* Video within modal with responsive behavior */
+.video-modal-content video {
+    max-width: 100%;
+    max-height: 80vh; /* Ensure video fits the viewport */
+    border-radius: 8px;
+}
+
+/* Close button styling */
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    background: #ff0000; /* Red background */
+    color: #fff; /* White text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 5px 10px; /* Padding */
+    cursor: pointer; /* Pointer cursor */
+    transition: background 0.3s; /* Smooth background transition */
+}
+
+.close-button:hover {
+    background: #cc0000; /* Darker red on hover */
+}
+
+/* Playback speed control styling */
+.playback-speed {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playback-speed label {
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.playback-speed select {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
